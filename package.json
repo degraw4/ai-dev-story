@@ -1,0 +1,15 @@
+{
+  "name": "ai-dev-story",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "test": "node --test --experimental-test-isolation=none tests/*.test.mjs",
+    "check:balance": "node scripts/check-cost-balance.mjs",
+    "check:audio": "python3 scripts/check-preview-audio.py",
+    "check:sounds": "python3 scripts/check-event-sounds.py",
+    "check:browser": "node scripts/check-prototype.mjs"
+  }
+}

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AI发展国 · 设计预览</title>
+  <link rel="stylesheet" href="preview.css">
+  <script src="office.js" defer></script>
+  <script src="preview.js" defer></script>
+</head>
+<body>
+  <header class="masthead">
+    <a class="wordmark" href="index.html"><span class="brand-icon" aria-hidden="true">▟</span><span>AI<span class="brand-cn">发展国</span><small>ONE MORE RELEASE</small></span></a>
+    <div class="season"><span class="status-dot"></span> 下一版科技 <span class="season-divider">·</span> 创业季</div>
+    <div class="header-actions"><span class="preview-badge">设计预览 · 固定示例</span><button id="music-toggle" class="small-button" aria-pressed="false">♫ 音乐关闭</button></div>
+  </header>
+
+  <main>
+    <section class="headline-row">
+      <div><div class="eyebrow">老板的工作日志</div><h1>再发一版，就能第一。</h1><p>办公室还很小，发布会上的愿景已经很大。</p></div>
+      <div class="week-card"><span>游戏时间示例</span><strong>第 28 日</strong><small>项目完成 · 已暂停</small></div>
+    </section>
+
+    <section class="stats" aria-label="公司经营概况示例">
+      <div class="stat"><span class="stat-icon coin">$</span><div><span>公司现金</span><strong>$ 86 <small>万</small></strong></div><em>下次账单已预留</em></div>
+      <div class="stat"><span class="stat-icon chip">▥</span><div><span>可用算力</span><strong>4 <small>/ 4 单位</small></strong></div><em>机房灯还亮着</em></div>
+      <div class="stat rank-stat"><span class="stat-icon trophy">★</span><div><span>综合榜排名</span><strong>第 3 <small>名</small></strong></div><em>离下一名还差一点</em></div>
+      <div class="stat customer-stat"><span class="stat-icon feedback">…</span><div><span>客户评价</span><strong>2.6 <small>/ 5</small></strong></div><em>大家都在等下个版本</em></div>
+    </section>
+
+    <div class="game-layout">
+      <aside class="panel team-panel">
+        <div class="panel-heading"><h2>在岗团队</h2><span class="counter">4 人</span></div>
+        <button class="staff-card selected" data-staff="avery"><span class="avatar plum" aria-hidden="true"><i></i></span><span><strong>Avery Loop</strong><small>编程工程师</small><b>等待新项目</b></span><span class="staff-arrow">›</span></button>
+        <button class="staff-card" data-staff="wang"><span class="avatar amber" aria-hidden="true"><i></i></span><span><strong>Alex Weng</strong><small>营销天才</small><b class="job-publish">筹备发布</b></span><span class="staff-arrow">›</span></button>
+        <button class="staff-card" data-staff="tim"><span class="avatar mint" aria-hidden="true"><i></i></span><span><strong>Tim Detmer</strong><small>显存魔术师</small><b>算力已释放</b></span><span class="staff-arrow">›</span></button>
+        <button class="staff-card" data-staff="ordinary"><span class="avatar rose" aria-hidden="true"><i></i></span><span><strong>Jules Page</strong><small>对话工程师</small><b>项目已完成</b></span><span class="staff-arrow">›</span></button>
+        <div class="team-note"><span>4 个工位已坐满</span>公司可逐步扩展至 8 人。当前项目已完成，可以筹备发布。</div>
+        <button class="outline-button" id="open-hiring">＋ 看看招聘市场</button>
+      </aside>
+
+      <section class="office-panel panel">
+        <div class="panel-heading"><h2>我们的办公室</h2><span class="label-strip">账单按时到达，未来暂未到达</span></div>
+        <div class="office-scene">
+          <div class="office-caption"><span class="live-square"></span>正在准备下一次历史性突破</div>
+          <canvas id="office" width="320" height="224" aria-label="原创像素办公室：四名员工在工位工作，右侧是算力机柜">办公室画面</canvas>
+          <div class="scene-callout" id="scene-callout">“下一款，咱们冲哪张榜？”</div>
+          <div class="floor-label">NEXT VERSION LABS</div>
+        </div>
+        <div class="employee-detail"><span class="detail-dot"></span><p id="staff-detail"><strong>Avery Loop</strong> 当前项目已经完成。新项目立项后，可以安排他参与 AI 编程项目。</p></div>
+        <nav class="game-tabs" aria-label="经营面板">
+          <button class="active" data-panel="plan">▣ 研发计划</button><button data-panel="ranking">★ 排行榜</button><button data-panel="news">▤ 行业新闻</button>
+        </nav>
+        <div class="workspace" id="panel-plan">
+          <div class="model-title"><div><span class="eyebrow">当前项目 · 主攻 AI 编程</span><h3>Next-4</h3></div><span class="pill">研发完成 · 待发布</span></div>
+          <div class="project-progress"><span>项目进度 <strong>100%</strong></span><div class="meter"><i style="width:100%"></i></div></div>
+          <div class="ability-scores" aria-label="Next-4 五项固定示例成绩"><div><span>AI 编程</span><strong>70</strong></div><div><span>智能体</span><strong>40</strong></div><div><span>办公</span><strong>30</strong></div><div><span>对话</span><strong>35</strong></div><div><span>多模态</span><strong>30</strong></div></div>
+          <div class="plan-footer"><p>五项合计 205 分。发布后才会进入榜单。</p><button class="primary-button" id="open-release">预览发布会 <span>→</span></button></div>
+        </div>
+        <div class="workspace hidden" id="panel-ranking"><div class="model-title"><h3>综合榜 · 示例快照</h3><span class="pill">成绩说了算</span></div><ol class="ranking-list"><li><b>01</b><span>CloseAI <small>TalkGPT 4</small></span><strong>220</strong></li><li><b>02</b><span>AntiThropic <small>Cloud Opus 3</small></span><strong>190</strong></li><li class="our-rank"><b>03</b><span>下一版科技 <small>Next-3</small></span><strong>180</strong></li><li><b>04</b><span>DeepPeek</span><strong>170</strong></li><li><b>05</b><span>Gloglo</span><strong>160</strong></li><li><b>06</b><span>Meeta</span><strong>150</strong></li></ol></div>
+        <div class="workspace hidden" id="panel-news"><div class="model-title"><h3>行业快讯</h3><span class="pill">每家都在改变世界</span></div><article class="news-story"><span class="source-tag">量子味 · 示例报道</span><h3>Nvidya 限时优惠，皮衣老板表示：买得越多，省得越多。</h3><p>采购前展示当前报价和生效时间。已经买下的设备不会被追补采购差价。</p><span class="news-footnote">新闻影响、持续时间和账单放在同一张卡片上。</span></article></div>
+      </section>
+
+      <aside class="right-column">
+        <section class="panel release-panel"><div class="panel-heading"><h2>发布备忘录</h2><span class="tiny-stamp">第 4 版</span></div><div class="memo-title">标题写好了，<br>就等填分数。</div><p>想让更多人知道这次<br>“决定性的一小步”？</p><div class="press-options"><span>机器之薪</span><span>量子味</span><span class="chosen">新智猿</span></div><blockquote>“刚刚！榜分再涨一分，<br>团队宣布人类进入全新时代！”</blockquote><small>一次发布，最多一篇付费报道。</small></section>
+        <section class="panel customer-panel"><div class="panel-heading"><h2>用户说</h2><span class="unread-dot"></span></div><p class="customer-quote">“我只是想把文件<br>下载回来。”</p><div class="customer-meta">来自一位仍在续费的用户</div><button id="reply-feedback" class="text-button">标记：下个版本处理 →</button></section>
+        <section class="sound-card"><span>♫ 原创试听</span><strong>One More Release</strong><label for="volume">音量 <input id="volume" type="range" min="0" max="1" step="0.05" value="0.35"></label></section>
+      </aside>
+    </div>
+    <footer><span>设计样张：可切换面板、查看人物、试听音乐和预览发布演出。</span><button class="text-button footer-preview" id="open-ending">查看结局构图 →</button><span>固定画面不运行经营时间，不执行真实交易。</span></footer>
+  </main>
+
+  <dialog id="release-dialog"><div class="dialog-top"><span class="eyebrow">发布会演出样张</span><button class="close-button" data-close aria-label="关闭发布会">×</button></div><div class="launch-stage"><div class="stage-grid"></div><div class="launch-star">✦</div><span class="launch-kicker">NEXT VERSION LABS PRESENTS</span><h2>Next-4</h2><p>再次，重新定义领先。</p><div class="launch-score"><span>公开成绩</span><strong>205</strong><small>固定示例</small></div></div><div class="launch-bottom"><p>台上宣布理解世界，台下还在找下载按钮。</p><button class="primary-button" id="view-report">查看发布战报 →</button></div></dialog>
+  <dialog id="hiring-dialog"><div class="dialog-top"><div><span class="eyebrow">招聘市场样张</span><h2>给办公室添一点特长。</h2></div><button class="close-button" data-close aria-label="关闭招聘">×</button></div><div class="candidate-grid"><article><span class="avatar blue"><i></i></span><h3>Boris Cherry</h3><b>五开工程师</b><p>研发积分更高，研发账单也更高。</p><q>人只来了一位，账单来了五份。</q></article><article><span class="avatar mint"><i></i></span><h3>Rebo</h3><b>额度重置大师</b><p>花费公司资源重置额度，提高客户评价。</p><q>额度重新来了，账单也重新来了。</q></article><article><span class="avatar amber"><i></i></span><h3>Max Score</h3><b>应试王</b><p>整理公开评测题，获得额外积分。</p><q>用户的问题不在考纲里。</q></article></div><p class="dialog-note">当前工位已满；扩充办公室或辞退并赔偿后，才能招入新人。这里只展示候选卡。</p></dialog>
+  <dialog id="report-dialog"><div class="dialog-top"><div><span class="eyebrow">发布战报构图 · 固定示例</span><h2>成绩上榜了，融资也到账了。</h2></div><button class="close-button" data-close aria-label="关闭发布战报">×</button></div><div class="report-grid"><section><span class="eyebrow">Next-4 已发布</span><div class="report-rank">第 3 名 <span>→</span> <strong>第 2 名</strong></div><p>综合积分 180 → 205</p><blockquote>“恭喜。另一家公司已经在准备下一版了。”</blockquote></section><section class="ledger"><div><span>发布前现金</span><strong>86</strong></div><div><span>发布费用</span><strong>−3</strong></div><div><span>报道费 · Alex 优惠</span><strong>−3</strong></div><div><span>种子融资到账</span><strong>+40</strong></div><div class="ledger-total"><span>当前现金</span><strong>120 万</strong></div><div><span>待下期账单 · 发布与报道加成</span><strong>+16</strong></div></section></div><div class="launch-bottom"><p>待下期账单的 16 万包含发布奖励 6 万和报道加成 10 万，当前不能使用。</p><button class="primary-button" data-close>回到办公室 →</button></div></dialog>
+  <dialog id="ending-dialog"><div class="dialog-top"><div><span class="eyebrow">结局构图 · 固定示例</span><h2>这一季，你们留下些什么？</h2></div><button class="close-button" data-close aria-label="关闭结局样张">×</button></div><div class="ending-options"><button class="selected" data-ending="crown">榜单常青树</button><button data-ending="capital">融资永动机</button><button data-ending="ordinary">明年一定第一</button><button data-ending="failure">发布会照常</button></div><section class="ending-stage"><span id="ending-symbol" aria-hidden="true">★</span><p class="eyebrow">NEXT VERSION LABS</p><h2 id="ending-title">榜单常青树</h2><p id="ending-line">你们守住了第一。下一次评测，已经排上日历。</p><div class="ending-comment" id="ending-comment">用户留言：请问怎么把之前上传的文件下载回来？</div></section><div class="launch-bottom"><p>正式结局使用实际名次、公司规模和资金记录。</p><button class="primary-button" data-close>回到样张 →</button></div></dialog>
+  <audio id="office-music" src="../assets/audio/office-loop.wav" loop preload="none"></audio>
+  <audio id="release-sound" src="../assets/audio/release-jingle.wav" preload="none"></audio>
+  <div id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

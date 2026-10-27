@@ -1,0 +1,16 @@
+node_modules/
+dist/
+coverage/
+artifacts/
+.env
+.env.*
+!.env.example
+*.local
+.DS_Store
+# Keep the original local handoff with unrelated workspace references out of public history.
+/榜一制造局-新任务交接.md
+
+# User-provided commercial game screenshots are local reference material.
+/docs/design/[1-4].png
+/docs/design/design.mp4
+/docs/design/dev.mp4

@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 2,
+  "state": {
+    "gameDay": 0,
+    "paused": true,
+    "cash": 100,
+    "seats": 4,
+    "compute": 2,
+    "employees": [
+      "avery",
+      "jules"
+    ],
+    "dismissed": [],
+    "assignments": {},
+    "project": null,
+    "nextProjectId": 1,
+    "knowledge": [
+      25,
+      25,
+      25
+    ],
+    "models": [
+      {
+        "id": "initial-0",
+        "company": "CloseAI",
+        "name": "TalkGPT 3",
+        "scores": [
+          60,
+          85,
+          50
+        ],
+        "day": 0,
+        "sequence": 1
+      },
+      {
+        "id": "initial-1",
+        "company": "AntiThropic",
+        "name": "Cloud Opus 3",
+        "scores": [
+          80,
+          65,
+          50
+        ],
+        "day": 0,
+        "sequence": 2
+      },
+      {
+        "id": "initial-2",
+        "company": "Gloglo",
+        "name": "Geminot 1",
+        "scores": [
+          45,
+          70,
+          75
+        ],
+        "day": 0,
+        "sequence": 3
+      },
+      {
+        "id": "initial-3",
+        "company": "Meeta",
+        "name": "Drama 2",
+        "scores": [
+          40,
+          45,
+          52
+        ],
+        "day": 0,
+        "sequence": 4
+      },
+      {
+        "id": "initial-4",
+        "company": "DeepPeek",
+        "name": "DeepPeek V2",
+        "scores": [
+          65,
+          50,
+          55
+        ],
+        "day": 0,
+        "sequence": 5
+      }
+    ],
+    "nextSequence": 6,
+    "funding": [],
+    "pendingBonus": 0,
+    "pendingNews": 0,
+    "ratingTenths": 21,
+    "appliedEvents": [],
+    "bills": [],
+    "notices": [],
+    "ending": null
+  },
+  "dayProgressMs": 0,
+  "observedStoryEvents": [],
+  "feedbackResponses": {}
+}

@@ -1,0 +1,567 @@
+{
+  "title": "One More Release",
+  "tempo_bpm": 128,
+  "beats_per_bar": 4,
+  "duration_seconds": 60,
+  "composition": "Original music for AI发展国; no external samples or borrowed game melodies.",
+  "format_notes": {
+    "melody": "One row per bar; each [pitch, beats] pair advances time; R is a rest.",
+    "sections": "first_bar uses one-based bar numbers; sections cover the full loop.",
+    "patterns.arpeggio": "Events are [beat within bar, chord note index 0-2, duration in beats].",
+    "patterns.bass": "Events are [beat within bar, one of root, fifth, third or octave, duration in beats].",
+    "patterns.drums": "Events are [instrument, beat within bar, amplitude multiplier].",
+    "arrangement": "One row per bar; pulse duty, note gate fraction, intensity and named accompaniment patterns.",
+    "arrangement.reply": "[pitch, beat within bar, duration in beats]; occupies a lead rest and replaces arpeggio slots.",
+    "jingle": "Note events use [pitch, start seconds, duration seconds]; drums use [instrument, start seconds, amplitude multiplier].",
+    "loop": "The final arpeggio pickup releases across the loop boundary; no global fade or padded silence."
+  },
+  "sections": [
+    {
+      "id": "A",
+      "name": "主题：又一场发布会",
+      "first_bar": 1,
+      "bars": 8,
+      "character": "D 大调主题，25% 脉冲音色，主旋律留白与副声部应答"
+    },
+    {
+      "id": "B",
+      "name": "对比：预算计算器",
+      "first_bar": 9,
+      "bars": 8,
+      "character": "B 小调与 E 小调和声，50% 方波，更低音区与切分节奏"
+    },
+    {
+      "id": "A_variation",
+      "name": "变奏：榜单上升中",
+      "first_bar": 17,
+      "bars": 8,
+      "character": "主题变奏，12.5% 与 25% 脉冲轮换，短琶音和低音行进"
+    },
+    {
+      "id": "bridge",
+      "name": "减层：咖啡时间",
+      "first_bar": 25,
+      "bars": 4,
+      "character": "减弱鼓组与低音密度，长短句交错，给持续经营留出呼吸"
+    },
+    {
+      "id": "turnaround",
+      "name": "转折：再发布一个",
+      "first_bar": 29,
+      "bars": 4,
+      "character": "主题动机回归，末尾上行引子衔接第一小节"
+    }
+  ],
+  "noise_seed": 1019,
+  "instruments": {
+    "lead": {
+      "waveform": "band-limited pulse",
+      "volume": 0.14,
+      "duty_cycles": [0.125, 0.25, 0.5]
+    },
+    "arpeggio": {
+      "waveform": "band-limited pulse",
+      "volume": 0.048,
+      "duty": 0.125
+    },
+    "reply": {
+      "waveform": "band-limited square",
+      "volume": 0.09,
+      "duty": 0.5
+    },
+    "bass": {
+      "waveform": "triangle",
+      "volume": 0.22
+    },
+    "drums": {
+      "waveform": "deterministic 15-bit shift-register noise; pitched triangle kick",
+      "external_samples": false
+    }
+  },
+  "melody": [
+    [["D5", 0.5], ["F#5", 0.5], ["A5", 0.75], ["R", 0.25], ["F#5", 0.5], ["E5", 0.5], ["D5", 1]],
+    [["F#5", 0.5], ["A5", 0.5], ["E5", 0.75], ["C#5", 0.25], ["R", 0.5], ["E5", 0.5], ["C#5", 0.5], ["A4", 0.5]],
+    [["B4", 0.5], ["D5", 0.5], ["F#5", 0.75], ["R", 0.25], ["A5", 0.5], ["F#5", 0.5], ["D5", 1]],
+    [["C#5", 0.75], ["F#5", 0.25], ["E5", 0.5], ["C#5", 0.5], ["A4", 1], ["R", 1]],
+    [["G4", 0.5], ["B4", 0.5], ["D5", 0.5], ["E5", 0.25], ["D5", 0.25], ["B4", 0.5], ["D5", 0.5], ["G5", 0.5], ["R", 0.5]],
+    [["F#5", 1], ["E5", 0.5], ["D5", 0.5], ["A4", 0.75], ["R", 0.25], ["F#4", 0.5], ["A4", 0.5]],
+    [["E5", 0.75], ["G5", 0.25], ["F#5", 0.5], ["E5", 0.5], ["B4", 1], ["D5", 0.5], ["R", 0.5]],
+    [["C#5", 0.5], ["E5", 0.5], ["A5", 1], ["R", 1], ["E5", 0.5], ["C#5", 0.5]],
+    [["B4", 1], ["R", 0.5], ["F#4", 0.5], ["A4", 0.5], ["B4", 0.5], ["D5", 1]],
+    [["C#5", 0.75], ["A4", 0.25], ["F#4", 0.5], ["A4", 0.5], ["C#5", 0.5], ["R", 0.5], ["F#5", 0.5], ["E5", 0.5]],
+    [["D5", 0.5], ["R", 0.5], ["B4", 0.75], ["A4", 0.25], ["G4", 1], ["D5", 1]],
+    [["A4", 0.5], ["F#4", 0.5], ["D5", 0.5], ["F#5", 0.5], ["E5", 0.75], ["R", 0.25], ["D5", 0.5], ["A4", 0.5]],
+    [["G4", 0.5], ["B4", 0.5], ["E5", 1], ["F#5", 0.25], ["E5", 0.25], ["D5", 0.5], ["B4", 0.5], ["R", 0.5]],
+    [["F#4", 1], ["B4", 0.5], ["D5", 0.5], ["F#5", 0.5], ["D5", 0.5], ["R", 1]],
+    [["G4", 0.5], ["B4", 0.5], ["D5", 0.75], ["R", 0.25], ["G5", 0.5], ["F#5", 0.5], ["E5", 0.5], ["D5", 0.5]],
+    [["E5", 0.5], ["C#5", 0.5], ["A4", 0.75], ["R", 0.25], ["B4", 0.5], ["C#5", 0.5], ["E5", 0.5], ["A4", 0.5]],
+    [["D5", 0.75], ["F#5", 0.25], ["A5", 0.5], ["R", 0.5], ["F#5", 0.5], ["E5", 0.5], ["D5", 0.5], ["F#5", 0.5]],
+    [["A5", 0.5], ["E5", 0.5], ["C#5", 0.5], ["E5", 0.5], ["A4", 0.5], ["R", 0.5], ["C#5", 0.5], ["E5", 0.5]],
+    [["B4", 0.25], ["D5", 0.25], ["F#5", 0.5], ["A5", 0.5], ["F#5", 0.5], ["D5", 0.75], ["B4", 0.25], ["R", 0.5], ["D5", 0.5]],
+    [["F#5", 0.75], ["E5", 0.25], ["C#5", 0.5], ["A4", 0.5], ["F#4", 0.5], ["A4", 0.5], ["R", 1]],
+    [["G5", 0.5], ["F#5", 0.5], ["E5", 0.5], ["D5", 0.5], ["B4", 0.5], ["D5", 0.5], ["G5", 0.5], ["R", 0.5]],
+    [["F#5", 0.5], ["A5", 0.5], ["D5", 1], ["E5", 0.5], ["F#5", 0.5], ["A4", 0.5], ["D5", 0.5]],
+    [["E5", 0.5], ["G5", 0.5], ["B4", 0.5], ["E5", 0.5], ["D5", 0.5], ["B4", 0.5], ["G4", 1]],
+    [["C#5", 0.25], ["E5", 0.25], ["A5", 0.5], ["G5", 0.5], ["E5", 0.5], ["C#5", 0.5], ["R", 0.5], ["B4", 0.5], ["A4", 0.5]],
+    [["B4", 1], ["D5", 0.5], ["R", 0.5], ["B4", 1], ["G4", 1]],
+    [["A4", 0.75], ["F#4", 0.25], ["D5", 1], ["R", 1], ["F#4", 0.5], ["A4", 0.5]],
+    [["G4", 0.5], ["B4", 0.5], ["E5", 0.75], ["R", 0.25], ["D5", 1], ["B4", 0.5], ["G4", 0.5]],
+    [["E5", 1], ["C#5", 0.5], ["A4", 0.5], ["R", 1], ["C#5", 0.5], ["E5", 0.5]],
+    [["D5", 0.5], ["F#5", 0.5], ["A5", 0.5], ["R", 0.5], ["F#5", 0.75], ["E5", 0.25], ["D5", 1]],
+    [["B4", 0.5], ["D5", 0.5], ["F#5", 1], ["A5", 0.5], ["F#5", 0.5], ["D5", 0.5], ["B4", 0.5]],
+    [["E5", 0.5], ["G5", 0.5], ["F#5", 0.5], ["E5", 0.5], ["D5", 0.5], ["B4", 0.5], ["G4", 0.5], ["E5", 0.5]],
+    [["C#5", 0.5], ["E5", 0.5], ["A5", 0.5], ["G5", 0.5], ["E5", 0.5], ["R", 0.5], ["A4", 0.5], ["C#5", 0.5]]
+  ],
+  "chords": [
+    ["D4", "F#4", "A4"],
+    ["A3", "C#4", "E4"],
+    ["B3", "D4", "F#4"],
+    ["F#3", "A3", "C#4"],
+    ["G3", "B3", "D4"],
+    ["D4", "F#4", "A4"],
+    ["E4", "G4", "B4"],
+    ["A3", "C#4", "E4"],
+    ["B3", "D4", "F#4"],
+    ["F#3", "A3", "C#4"],
+    ["G3", "B3", "D4"],
+    ["D4", "F#4", "A4"],
+    ["E4", "G4", "B4"],
+    ["B3", "D4", "F#4"],
+    ["G3", "B3", "D4"],
+    ["A3", "C#4", "E4"],
+    ["D4", "F#4", "A4"],
+    ["A3", "C#4", "E4"],
+    ["B3", "D4", "F#4"],
+    ["F#3", "A3", "C#4"],
+    ["G3", "B3", "D4"],
+    ["D4", "F#4", "A4"],
+    ["E4", "G4", "B4"],
+    ["A3", "C#4", "E4"],
+    ["G3", "B3", "D4"],
+    ["D4", "F#4", "A4"],
+    ["E4", "G4", "B4"],
+    ["A3", "C#4", "E4"],
+    ["D4", "F#4", "A4"],
+    ["B3", "D4", "F#4"],
+    ["E4", "G4", "B4"],
+    ["A3", "C#4", "E4"]
+  ],
+  "bass": [
+    "D3",
+    "C#3",
+    "B2",
+    "F#2",
+    "G2",
+    "F#2",
+    "E3",
+    "A2",
+    "B2",
+    "F#2",
+    "G2",
+    "D3",
+    "E3",
+    "B2",
+    "G2",
+    "A2",
+    "D3",
+    "A2",
+    "B2",
+    "F#2",
+    "G2",
+    "F#2",
+    "E3",
+    "A2",
+    "G2",
+    "F#2",
+    "E3",
+    "A2",
+    "D3",
+    "B2",
+    "E3",
+    "A2"
+  ],
+  "patterns": {
+    "arpeggio": {
+      "spark": [[0.5, 0, 0.22], [1, 1, 0.22], [1.5, 2, 0.22], [2.5, 1, 0.22], [3, 0, 0.22], [3.5, 2, 0.22]],
+      "skip": [[0, 0, 0.36], [0.75, 2, 0.18], [1.5, 1, 0.25], [2.5, 0, 0.32], [3.25, 1, 0.2], [3.5, 2, 0.2]],
+      "bounce": [[0.25, 0, 0.2], [0.75, 1, 0.2], [1.25, 2, 0.2], [1.75, 1, 0.2], [2.25, 0, 0.2], [2.75, 2, 0.2], [3.25, 1, 0.2], [3.75, 2, 0.2]],
+      "ripple": [[0.5, 0, 0.18], [0.75, 1, 0.18], [1, 2, 0.18], [1.25, 1, 0.18], [2.5, 0, 0.18], [2.75, 1, 0.18], [3, 2, 0.18], [3.25, 1, 0.18]],
+      "sparse": [[0.5, 0, 0.55], [1.5, 2, 0.35], [2.5, 1, 0.55], [3.5, 2, 0.35]],
+      "pickup": [[0.5, 0, 0.2], [1, 1, 0.2], [1.5, 2, 0.2], [2.5, 1, 0.2], [3, 0, 0.2], [3.5, 1, 0.2], [3.75, 2, 0.36]]
+    },
+    "bass": {
+      "bounce": [[0, "root", 0.65], [1.5, "fifth", 0.35], [2, "root", 0.65], [3, "fifth", 0.4], [3.5, "octave", 0.3]],
+      "walk": [[0, "root", 0.65], [1, "third", 0.55], [2, "fifth", 0.65], [3, "octave", 0.4], [3.5, "fifth", 0.3]],
+      "sync": [[0, "root", 0.85], [1.5, "fifth", 0.4], [2.5, "root", 0.45], [3.5, "fifth", 0.35]],
+      "sparse": [[0, "root", 1.4], [2, "fifth", 1.25]],
+      "pickup": [[0, "root", 0.65], [1, "fifth", 0.6], [2, "root", 0.6], [3, "third", 0.4], [3.5, "octave", 0.45]]
+    },
+    "drums": {
+      "groove": [
+        ["kick", 0, 1],
+        ["kick", 2, 0.85],
+        ["snare", 1, 0.8],
+        ["snare", 3, 0.85],
+        ["hat", 0, 0.55],
+        ["hat", 0.5, 0.9],
+        ["hat", 1, 0.55],
+        ["hat", 1.5, 0.9],
+        ["hat", 2, 0.55],
+        ["hat", 2.5, 0.9],
+        ["hat", 3, 0.55],
+        ["hat", 3.5, 0.9]
+      ],
+      "skip": [
+        ["kick", 0, 0.9],
+        ["kick", 1.5, 0.65],
+        ["kick", 2.5, 0.7],
+        ["snare", 1, 0.65],
+        ["snare", 3, 0.8],
+        ["hat", 0.5, 0.75],
+        ["hat", 1.75, 0.75],
+        ["hat", 2.5, 0.75],
+        ["hat", 3.5, 0.75]
+      ],
+      "half": [["kick", 0, 0.9], ["snare", 2, 0.7], ["hat", 0.5, 0.65], ["hat", 1.5, 0.65], ["hat", 2.5, 0.65], ["hat", 3.5, 0.65]],
+      "fill": [
+        ["kick", 0, 1],
+        ["kick", 2, 0.85],
+        ["snare", 1, 0.8],
+        ["snare", 3, 0.85],
+        ["hat", 0, 0.55],
+        ["hat", 0.5, 0.9],
+        ["hat", 1, 0.55],
+        ["hat", 1.5, 0.9],
+        ["hat", 2, 0.55],
+        ["hat", 2.5, 0.9],
+        ["hat", 3, 0.55],
+        ["snare", 3.25, 0.4],
+        ["snare", 3.5, 0.6],
+        ["snare", 3.75, 0.75]
+      ],
+      "lift": [
+        ["kick", 0, 1],
+        ["kick", 2, 0.85],
+        ["snare", 1, 0.8],
+        ["snare", 3, 0.85],
+        ["hat", 0, 0.55],
+        ["hat", 0.5, 0.9],
+        ["hat", 1, 0.55],
+        ["hat", 1.5, 0.9],
+        ["hat", 2, 0.55],
+        ["hat", 2.5, 0.9],
+        ["hat", 3, 0.55],
+        ["hat", 3.5, 0.9],
+        ["kick", 2.75, 0.6],
+        ["open_hat", 3.5, 0.75]
+      ],
+      "turn": [
+        ["kick", 0, 1],
+        ["kick", 2, 0.8],
+        ["snare", 1, 0.8],
+        ["snare", 3, 0.8],
+        ["snare", 3.5, 0.5],
+        ["open_hat", 3.75, 0.65],
+        ["hat", 0.5, 0.7],
+        ["hat", 1.5, 0.7],
+        ["hat", 2.5, 0.7]
+      ]
+    }
+  },
+  "arrangement": [
+    {
+      "lead_duty": 0.25,
+      "lead_gate": 0.8,
+      "intensity": 0.88,
+      "arpeggio": "spark",
+      "bass": "bounce",
+      "drums": "groove"
+    },
+    {
+      "lead_duty": 0.25,
+      "lead_gate": 0.78,
+      "intensity": 0.88,
+      "arpeggio": "skip",
+      "bass": "bounce",
+      "drums": "groove"
+    },
+    {
+      "lead_duty": 0.25,
+      "lead_gate": 0.82,
+      "intensity": 0.9,
+      "arpeggio": "spark",
+      "bass": "sync",
+      "drums": "groove"
+    },
+    {
+      "lead_duty": 0.25,
+      "lead_gate": 0.78,
+      "intensity": 0.88,
+      "arpeggio": "ripple",
+      "bass": "walk",
+      "drums": "fill",
+      "reply": [["F#4", 3, 0.5], ["A4", 3.5, 0.5]]
+    },
+    {
+      "lead_duty": 0.25,
+      "lead_gate": 0.78,
+      "intensity": 0.92,
+      "arpeggio": "bounce",
+      "bass": "bounce",
+      "drums": "groove",
+      "reply": [["B4", 3.5, 0.25], ["D5", 3.75, 0.25]]
+    },
+    {
+      "lead_duty": 0.25,
+      "lead_gate": 0.84,
+      "intensity": 0.93,
+      "arpeggio": "spark",
+      "bass": "walk",
+      "drums": "groove"
+    },
+    {
+      "lead_duty": 0.25,
+      "lead_gate": 0.82,
+      "intensity": 0.95,
+      "arpeggio": "ripple",
+      "bass": "sync",
+      "drums": "lift"
+    },
+    {
+      "lead_duty": 0.25,
+      "lead_gate": 0.82,
+      "intensity": 1,
+      "arpeggio": "spark",
+      "bass": "pickup",
+      "drums": "turn",
+      "reply": [["E4", 2, 0.5], ["C#4", 2.5, 0.5]]
+    },
+    {
+      "lead_duty": 0.5,
+      "lead_gate": 0.9,
+      "intensity": 0.84,
+      "arpeggio": "skip",
+      "bass": "sync",
+      "drums": "half",
+      "reply": [["F#4", 1, 0.5]]
+    },
+    {
+      "lead_duty": 0.5,
+      "lead_gate": 0.88,
+      "intensity": 0.86,
+      "arpeggio": "sparse",
+      "bass": "bounce",
+      "drums": "skip",
+      "reply": [["A4", 2.5, 0.5]]
+    },
+    {
+      "lead_duty": 0.5,
+      "lead_gate": 0.9,
+      "intensity": 0.85,
+      "arpeggio": "skip",
+      "bass": "sync",
+      "drums": "half",
+      "reply": [["D4", 0.5, 0.5]]
+    },
+    {
+      "lead_duty": 0.5,
+      "lead_gate": 0.86,
+      "intensity": 0.88,
+      "arpeggio": "ripple",
+      "bass": "walk",
+      "drums": "fill"
+    },
+    {
+      "lead_duty": 0.5,
+      "lead_gate": 0.88,
+      "intensity": 0.9,
+      "arpeggio": "skip",
+      "bass": "sync",
+      "drums": "skip"
+    },
+    {
+      "lead_duty": 0.5,
+      "lead_gate": 0.92,
+      "intensity": 0.87,
+      "arpeggio": "sparse",
+      "bass": "bounce",
+      "drums": "half",
+      "reply": [["D4", 3, 0.5], ["F#4", 3.5, 0.5]]
+    },
+    {
+      "lead_duty": 0.5,
+      "lead_gate": 0.88,
+      "intensity": 0.94,
+      "arpeggio": "ripple",
+      "bass": "walk",
+      "drums": "skip"
+    },
+    {
+      "lead_duty": 0.5,
+      "lead_gate": 0.84,
+      "intensity": 0.98,
+      "arpeggio": "bounce",
+      "bass": "pickup",
+      "drums": "turn"
+    },
+    {
+      "lead_duty": 0.125,
+      "lead_gate": 0.76,
+      "intensity": 1,
+      "arpeggio": "bounce",
+      "bass": "walk",
+      "drums": "lift",
+      "reply": [["A4", 1.5, 0.5]]
+    },
+    {
+      "lead_duty": 0.25,
+      "lead_gate": 0.78,
+      "intensity": 1,
+      "arpeggio": "spark",
+      "bass": "bounce",
+      "drums": "groove",
+      "reply": [["E4", 2.5, 0.5]]
+    },
+    {
+      "lead_duty": 0.125,
+      "lead_gate": 0.74,
+      "intensity": 1.02,
+      "arpeggio": "ripple",
+      "bass": "walk",
+      "drums": "lift"
+    },
+    {
+      "lead_duty": 0.25,
+      "lead_gate": 0.78,
+      "intensity": 0.98,
+      "arpeggio": "bounce",
+      "bass": "sync",
+      "drums": "fill",
+      "reply": [["F#4", 3, 0.5], ["A4", 3.5, 0.5]]
+    },
+    {
+      "lead_duty": 0.125,
+      "lead_gate": 0.76,
+      "intensity": 1.03,
+      "arpeggio": "bounce",
+      "bass": "walk",
+      "drums": "lift"
+    },
+    {
+      "lead_duty": 0.25,
+      "lead_gate": 0.8,
+      "intensity": 1.02,
+      "arpeggio": "spark",
+      "bass": "bounce",
+      "drums": "groove"
+    },
+    {
+      "lead_duty": 0.125,
+      "lead_gate": 0.76,
+      "intensity": 1.05,
+      "arpeggio": "ripple",
+      "bass": "walk",
+      "drums": "lift"
+    },
+    {
+      "lead_duty": 0.25,
+      "lead_gate": 0.74,
+      "intensity": 1.06,
+      "arpeggio": "bounce",
+      "bass": "pickup",
+      "drums": "turn",
+      "reply": [["E4", 2.5, 0.5]]
+    },
+    {
+      "lead_duty": 0.5,
+      "lead_gate": 0.92,
+      "intensity": 0.72,
+      "arpeggio": "sparse",
+      "bass": "sparse",
+      "drums": "half",
+      "reply": [["G4", 1.5, 0.5]]
+    },
+    {
+      "lead_duty": 0.5,
+      "lead_gate": 0.92,
+      "intensity": 0.73,
+      "arpeggio": "sparse",
+      "bass": "sparse",
+      "drums": "half",
+      "reply": [["A4", 2, 0.5], ["F#4", 2.5, 0.5]]
+    },
+    {
+      "lead_duty": 0.5,
+      "lead_gate": 0.88,
+      "intensity": 0.78,
+      "arpeggio": "skip",
+      "bass": "sync",
+      "drums": "skip"
+    },
+    {
+      "lead_duty": 0.5,
+      "lead_gate": 0.88,
+      "intensity": 0.85,
+      "arpeggio": "spark",
+      "bass": "pickup",
+      "drums": "fill",
+      "reply": [["E4", 2, 0.5], ["A4", 2.5, 0.5]]
+    },
+    {
+      "lead_duty": 0.25,
+      "lead_gate": 0.82,
+      "intensity": 0.95,
+      "arpeggio": "bounce",
+      "bass": "bounce",
+      "drums": "groove",
+      "reply": [["A4", 1.5, 0.5]]
+    },
+    {
+      "lead_duty": 0.25,
+      "lead_gate": 0.84,
+      "intensity": 0.98,
+      "arpeggio": "spark",
+      "bass": "walk",
+      "drums": "lift"
+    },
+    {
+      "lead_duty": 0.25,
+      "lead_gate": 0.82,
+      "intensity": 1,
+      "arpeggio": "ripple",
+      "bass": "walk",
+      "drums": "groove"
+    },
+    {
+      "lead_duty": 0.25,
+      "lead_gate": 0.84,
+      "intensity": 1.02,
+      "arpeggio": "pickup",
+      "bass": "pickup",
+      "drums": "turn",
+      "reply": [["E4", 2.5, 0.25], ["A4", 2.75, 0.25]]
+    }
+  ],
+  "jingle": {
+    "title": "Release Complete",
+    "duration_seconds": 2.4,
+    "melody": [["D5", 0, 0.16], ["F#5", 0.16, 0.16], ["A5", 0.32, 0.23], ["E5", 0.58, 0.12], ["F#5", 0.72, 0.12], ["A5", 0.88, 0.18], ["D5", 1.08, 0.64]],
+    "arpeggio": [
+      ["D4", 0, 0.12],
+      ["F#4", 0.16, 0.12],
+      ["A4", 0.32, 0.12],
+      ["D5", 0.48, 0.12],
+      ["C#5", 0.64, 0.12],
+      ["E5", 0.8, 0.12],
+      ["A4", 0.96, 0.12],
+      ["D4", 1.12, 0.16],
+      ["F#4", 1.32, 0.16],
+      ["A4", 1.52, 0.16],
+      ["D5", 1.72, 0.16],
+      ["A4", 1.92, 0.18],
+      ["F#4", 2.12, 0.2]
+    ],
+    "bass": [["D3", 0, 0.34], ["A2", 0.4, 0.32], ["A2", 0.8, 0.24], ["D3", 1.08, 1.25]],
+    "drums": [["kick", 0, 1], ["snare", 0.4, 0.7], ["snare", 0.6, 0.4], ["snare", 0.8, 0.6], ["open_hat", 1.08, 0.9]]
+  }
+}

@@ -1,0 +1,2 @@
+# Optional tooling to reproduce the original music samples, not a game dependency.
+numpy==1.24.2

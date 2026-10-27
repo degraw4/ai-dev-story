@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 3,
+  "state": {
+    "gameDay": 3,
+    "paused": false,
+    "cash": 100,
+    "seats": 4,
+    "compute": 2,
+    "employees": [
+      "avery",
+      "jules"
+    ],
+    "dismissed": [],
+    "assignments": {},
+    "project": {
+      "id": 1,
+      "name": "迁移中的模型",
+      "focus": "coding",
+      "plannerId": "avery",
+      "status": "researching",
+      "planProgress": 2,
+      "planScores": [
+        37,
+        27,
+        26
+      ],
+      "work": 4,
+      "stageIndex": 0,
+      "stageWork": 4,
+      "scoreRemainders": [
+        4,
+        12,
+        12
+      ],
+      "initialScores": [
+        25,
+        25,
+        25
+      ],
+      "scores": [
+        40,
+        28,
+        26
+      ]
+    },
+    "nextProjectId": 2,
+    "knowledge": [
+      25,
+      25,
+      25
+    ],
+    "models": [
+      {
+        "id": "initial-0",
+        "company": "CloseAI",
+        "name": "TalkGPT 3",
+        "scores": [
+          60,
+          85,
+          50
+        ],
+        "day": 0,
+        "sequence": 1
+      },
+      {
+        "id": "initial-1",
+        "company": "AntiThropic",
+        "name": "Cloud Opus 3",
+        "scores": [
+          80,
+          65,
+          50
+        ],
+        "day": 0,
+        "sequence": 2
+      },
+      {
+        "id": "initial-2",
+        "company": "Gloglo",
+        "name": "Geminot 1",
+        "scores": [
+          45,
+          70,
+          75
+        ],
+        "day": 0,
+        "sequence": 3
+      },
+      {
+        "id": "initial-3",
+        "company": "Meeta",
+        "name": "Drama 2",
+        "scores": [
+          40,
+          45,
+          52
+        ],
+        "day": 0,
+        "sequence": 4
+      },
+      {
+        "id": "initial-4",
+        "company": "DeepPeek",
+        "name": "DeepPeek V2",
+        "scores": [
+          65,
+          50,
+          55
+        ],
+        "day": 0,
+        "sequence": 5
+      }
+    ],
+    "nextSequence": 6,
+    "funding": [],
+    "pendingBonus": 0,
+    "pendingNews": 0,
+    "ratingTenths": 21,
+    "appliedEvents": [],
+    "bills": [],
+    "notices": [
+      {
+        "day": 0,
+        "type": "project-created",
+        "projectId": 1
+      },
+      {
+        "day": 1,
+        "type": "planning",
+        "employeeId": "avery",
+        "projectId": 1,
+        "progress": 1
+      },
+      {
+        "day": 2,
+        "type": "planning",
+        "employeeId": "avery",
+        "projectId": 1,
+        "progress": 2
+      },
+      {
+        "day": 2,
+        "type": "plan-ready",
+        "employeeId": "avery",
+        "projectId": 1,
+        "scores": [
+          37,
+          27,
+          26
+        ]
+      },
+      {
+        "day": 3,
+        "type": "research",
+        "projectId": 1,
+        "focus": "coding",
+        "stageId": "data",
+        "employeeIds": [
+          "avery",
+          "jules"
+        ],
+        "work": 4,
+        "gains": [
+          3,
+          1,
+          0
+        ],
+        "compute": 2
+      }
+    ],
+    "acceptedActions": [
+      {
+        "type": "createProject",
+        "name": "迁移中的模型",
+        "focus": "coding",
+        "plannerId": "avery"
+      },
+      {
+        "type": "resume"
+      },
+      {
+        "type": "advanceTo",
+        "targetDay": 3
+      }
+    ],
+    "ending": null
+  },
+  "dayProgressMs": 1200,
+  "observedStoryEvents": [
+    "chapter-0"
+  ],
+  "feedbackResponses": {}
+}
