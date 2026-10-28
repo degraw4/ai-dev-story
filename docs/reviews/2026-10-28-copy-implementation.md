@@ -16,3 +16,7 @@
 - `tests/story.test.mjs`、`tests/story-scenes.test.mjs`、`tests/media-escalation.test.mjs`、`tests/notifications.test.mjs`：覆盖媒体独立计数、旧文章回看稳定、真实成绩与排行、剧情条件和不变更经营数据。
 - 隔离浏览器执行 `scripts/check-prototype.mjs` 通过；覆盖四种视口、新手流程、媒体第 1 和第 7 篇、刷新回看、剧情、存档和结局。测试使用独立浏览器数据目录与本地测试端口。
 - 浏览器自动检查不能证明用户觉得文案有趣，也不等同于线上完整真人试玩。中期难度和订阅收入问题仍记在 D-11。
+
+## 推送与网页
+
+源码提交 `ce82ed9` 已推送至 GitHub，GitHub Pages 构建状态为 built，构建记录对应该提交。公开网页的 `src/story.js` 返回 HTTP 200，检查到新媒体标题和用户评论。该检查不代表在线上完成一整局。
