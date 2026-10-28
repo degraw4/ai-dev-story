@@ -447,7 +447,7 @@ try {
       await until("document.getElementById('notice-dialog').open && document.getElementById('notice-dialog').dataset.kind==='media'");
       const title=await evaluate("document.getElementById('notice-title').textContent"),copy=await evaluate("document.getElementById('notice-copy').textContent");
       assert(!/付费用户|账单|推广|有效期|不叠加|每期|编辑|稿费/.test(copy));
-      if(edition===7)assert(title.includes('平行宇宙'),'later coverage goes beyond the sixth tier');
+      if(edition===7)assert(title.includes('第 7 次报道') && !title.includes('平行宇宙'),'later coverage follows the revised industry-focused style');
       await reload();await until("document.getElementById('notice-dialog').open");
       assert.equal(await evaluate("document.getElementById('notice-title').textContent"),title);assert.equal(await evaluate("document.getElementById('notice-copy').textContent"),copy);
       assert.deepEqual(economy((await saved()).state),economy({...company,subscriptionGrowthEnabled:true}),'adopting the future subscription policy leaves media history and past economics unchanged');

@@ -67,8 +67,8 @@ test('media have distinct voices and every publication gets a new title and exce
     history.push(model);const article=story.mediaArticle(model,3,history);assert.match(article.copy,new RegExp(name));assert.match(article.title,new RegExp(model.name));assert.match(article.copy,/第 3 名/);all.push(article);
   }}
   assert.equal(new Set(all.map(item=>item.title)).size,24);assert.equal(new Set(all.map(item=>item.copy)).size,24);
-  assert.match(all.find(item=>item.copy.startsWith('机器之薪')).title,/评测|技术/);
-  assert.match(all.find(item=>item.copy.startsWith('新智猿')).title,/炸了.*睡不着/);
+  assert.match(all.find(item=>item.copy.startsWith('机器之薪')).title,/评测|技术|测试/);
+  assert.match(all.find(item=>item.copy.startsWith('新智猿')).title,/刚刚.*发布/);
 });
 
 test('release and user comments follow model focus without changing published data',()=>{

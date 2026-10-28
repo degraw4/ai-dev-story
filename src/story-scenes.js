@@ -44,11 +44,11 @@ export function storyScene(state, id, observedIds = []) {
     const market = marketSummary(state);
     const income = Math.max(0, market.weeklyIncome + state.pendingBonus + state.pendingNews);
     Object.assign(result, {
-      intro: '老板还在改融资用的演示稿，小满把工资表拖到了屏幕正中间。',
+      intro: '老板正把融资演示稿里的增长曲线往上拉，小满把工资表放到了他面前。',
       lines: [
-        { speaker: '小满', text: '工资和设备运行费都在这儿，您看一下。' },
-        { speaker: '老板', text: '能不能等融资到了再付？' },
-        { speaker: '小满', text: published.length ? '到账再算。先看已发布模型的订阅收入够不够。' : '还没发模型，也没有订阅收入。这笔得从现有现金里出。' },
+        { speaker: '小满', text: '工资和设备运行费的账单快到了。' },
+        { speaker: '老板', text: '融资还没到账，能晚几天吗？' },
+        { speaker: '小满', text: published.length ? '先看看订阅收入够不够吧。' : '模型还没发布，只能先从账上的钱里付。' },
       ],
       facts: [
         { label: '公司现金', value: cash(state.cash) },
@@ -61,38 +61,38 @@ export function storyScene(state, id, observedIds = []) {
   } else if (id === 'story-contacts') {
     const model = historicalModel(state, 'Gloglo', day);
     Object.assign(result, {
-      intro: 'Gloglo 的公司群里转来一封邮件：首席科学家 Jeff Damn 离职了。这家千人以上的大公司，光是告别回复就刷了好几屏。',
+      intro: 'Gloglo 的首席科学家 Jeff Damn 发邮件宣布离职。Gloglo 是千人以上的大公司，群里的祝福刷了几百条。',
       cards: [
-        { label: '读告别邮件', title: 'Jeff Damn 离开 Gloglo', copy: 'Jeff：“谢谢大家这些年的合作。我已经离职，接下来做什么还没公布。”同事问下次模型评审谁来主持。行政回了一句：“会议照开，主持人稍后更新。”' },
-        { label: '看看模型页面', title: model?.name || '当时的模型页面', copy: `${modelCopy(model)} Jeff 走后，Gloglo 仍有上千名员工。模型页面没有下线，研发团队继续准备后面的发布。` },
+        { label: '读告别邮件', title: 'Jeff Damn 离开 Gloglo', copy: 'Jeff：“谢谢大家这些年的合作。接下来做什么，想好了再告诉你们。”团队的模型评审邀请照常发出，主持人一栏暂时空着。' },
+        { label: '看看模型页面', title: model?.name || '当时的模型页面', copy: `${modelCopy(model)} Jeff 走后，Gloglo 仍有上千名员工。产品页面照常更新，下一场发布会的准备工作还在进行。` },
       ],
       facts: [{ label: '你公司的在岗员工', value: `${state.employees.length} 人` }],
-      outro: state.employees.length === 2 ? '老板看完新闻，又看了看办公室：“咱们才两个人，还是先看看有没有合适的候选人。”' : `老板关掉邮件：“Gloglo 的事先放一边。咱们现在 ${state.employees.length} 个人，看看还缺什么人。”`,
+      outro: state.employees.length === 2 ? '老板看完邮件，抬头问：“咱们招人的事有消息了吗？”' : `老板关掉邮件：“咱们现在 ${state.employees.length} 个人，还缺什么人？”`,
       cta: { label: '看看我们能招谁', panel: 'hiring' },
     });
   } else if (id === 'story-headlines') {
     Object.assign(result, {
-      intro: '媒体编辑把昨天的报道另存了一份，只改了型号名。光标停在标题开头，等着再加一个词。',
+      intro: '新模型的预热还挂在首页。编辑拿起昨晚写的稿子，打算给标题再加个词。',
       choices: [
-        { id: 'sudden', label: '填“突然”', reply: '编辑：“行。预热链接先别放，点进去就知道预告挂了多久。”' },
-        { id: 'again', label: '填“又”', reply: '编辑：“‘又一个新时代’？昨天那篇也叫这个，我把型号换掉。这个标题存着，下次还能用。”' },
-        { id: 'epic', label: '填“史诗级”', reply: '编辑：“有对比数据吗？”同事：“还没给。”编辑：“那先把字放大。”' },
+        { id: 'sudden', label: '填“突然”', reply: '编辑：“就写‘突然’。预热了三天的消息先别提。”' },
+        { id: 'again', label: '填“又”', reply: '编辑：“又来了！型号换一下，昨天的标题还能用。”' },
+        { id: 'epic', label: '填“史诗级”', reply: '编辑：“数据呢？”同事：“还在跑。”编辑：“标题先写，数据等跑完再补。”' },
       ],
       facts: [{ label: '你公司已购买的报道', value: `${published.filter(model => model.media).length} 篇` }],
-      outro: '编辑把样稿发进群：“谁有新模型的全名？别又把上一代发出去。”',
+      outro: '编辑发出样稿，又在群里补了一句：“谁核一下型号，别写成上次的。”',
     });
   } else if (id === 'story-prices') {
     Object.assign(result, {
       intro: 'DeepPeek R1 的价目表传到了同行群里。有人圈出费用那一行，又转来 Nvidya 的股票页面。',
       cards: [
-        { label: '读股票新闻', title: 'Nvidya 的股价跌了', copy: '同行老板：“照这个价格卖，他们怎么赚钱？”工程师：“技术报告里写了。”老板：“先别讲原理，把咱们的报价表拿来。”' },
-        { label: '看供应商的报价单', title: '显卡报价没跟着跌', copy: `公告当天的设备报价是每单位 ${cash(price({ ...state, gameDay: day }))}。采购：“股票都跌了，卡能便宜点吗？”供应商：“您要买多少？我按这张单子开。”` },
+        { label: '读股票新闻', title: 'Nvidya 的股价跌了', copy: '同行先转发了价格页，财务把预算表改了三遍。老板问：“我们能按这个价格卖吗？”工程师：“我先算算机器的钱。”' },
+        { label: '看供应商的报价单', title: '显卡报价没跟着跌', copy: `公告当天的设备报价是每单位 ${cash(price({ ...state, gameDay: day }))}。采购：“股票都跌了，卡能便宜点吗？”销售：“您要几张？”` },
       ],
       facts: [
         { label: '你公司现在的采购单价', value: `${cash(price(state))} / 单位` },
         { label: '你公司已购算力', value: `${state.compute} 单位` },
       ],
-      outro: '采购关掉股票新闻，留下报价单：“还是按这个数算。”',
+      outro: '采购看了看股票，又看了看报价单：“这俩好像没什么关系。”',
       cta: { label: '查看设备报价', panel: 'finance' },
     });
   } else if (id === 'story-pencil') {
@@ -100,11 +100,11 @@ export function storyScene(state, id, observedIds = []) {
     const talk = historicalModel(state, 'CloseAI', day);
     const purchased = published.some(model => model.media);
     Object.assign(result, {
-      intro: 'Cloud 和 TalkGPT 又赶在一起发布。编辑把两家的榜单图摆到桌面上，开始裁掉各自不好看的那几列。',
+      intro: '编辑把 Cloud 和 TalkGPT 的成绩放在一起，准备做一张榜单图。',
       lines: [
         { speaker: '行业快讯', text: `榜单已更新，可以查看 ${cloud?.name || 'Cloud 的已发布型号'} 和 ${talk?.name || 'TalkGPT 的已发布型号'} 的成绩。` },
-        { speaker: '媒体编辑', text: '这两张图别叠，各发一篇。自家的柱子涂亮一点。' },
-        { speaker: '小满', text: purchased ? '咱们那篇报道已经发了。要改型号的话，我先问问编辑。' : '咱们先别急着写“最新”。把自己的成绩查一下。' },
+        { speaker: '媒体编辑', text: '榜单截图能不能只留自家的成绩？' },
+        { speaker: '小满', text: purchased ? '我们的报道已经发了，要改图我再联系编辑。' : published.length ? '我们还没买报道，要用这张图吗？' : '我们还没有模型上榜，先留一份完整榜单吧。' },
       ],
       facts: currentFacts(state),
       outro: rank(state) === 1 ? '老板看了一眼榜单：“我们还在第一，截图把日期也带上。”' : rank(state) === null ? '老板：“咱们的模型还没上榜，先别做海报。”' : `老板：“咱们现在第 ${rank(state)} 名。图别裁了，完整的给我看看。”`,
@@ -114,7 +114,7 @@ export function storyScene(state, id, observedIds = []) {
     Object.assign(result, {
       intro: 'Meeta 的模型下载页弹出“请联系商务”。隔壁招聘页不用登录，邮箱和电话都写在第一屏。',
       choices: [
-        { id: 'download', label: '点一下模型下载', reply: '访客：“不是说开放吗？”商务：“介绍文档可以直接看。您要模型的话，我先给您约个会。”' },
+        { id: 'download', label: '点一下模型下载', reply: '访客：“不是说开放吗？”商务：“模型需要申请，我先帮您登记。”' },
         { id: 'talent', label: '点一下招聘入口', reply: '招聘负责人：“您现在在哪家公司？”候选人：“还没打算跳。”对方：“先聊待遇，方便留个电话吗？”' },
       ],
       facts: [{ label: '你公司的在岗员工', value: `${state.employees.length} 人` }],
@@ -123,38 +123,38 @@ export function storyScene(state, id, observedIds = []) {
     });
   } else if (id === 'story-soon') {
     Object.assign(result, {
-      intro: '两封发布预告先后进了媒体邮箱，都没写具体时间。编辑给两家公司各回了一封邮件。',
+      intro: 'CloseAI 和 AntiThropic 先后发来发布预告，都没写具体时间。编辑打电话去问。',
       cards: [
-        { label: '读 CloseAI 的回信', title: '“对面定了吗？”', copy: 'Sam Allman 的助理：“台搭好了。AntiThropic 说哪天了吗？”编辑：“我在问你们。”助理：“您先问问他们。”' },
-        { label: '读 AntiThropic 的回信', title: '“他们发了就打给我”', copy: 'AntiThropic 公关：“先别发稿。CloseAI 要是今天发，给我打电话。”编辑看了眼手机，把两边都设成了置顶。' },
+        { label: '读 CloseAI 的回信', title: '“对面定了吗？”', copy: 'CloseAI 公关：“AntiThropic 定几点？”编辑：“还没说。”公关：“那您问到了告诉我一声。”' },
+        { label: '读 AntiThropic 的回信', title: '“他们发了就打给我”', copy: '五分钟后，AntiThropic 公关打来：“CloseAI 定了吗？”编辑：“我也正等他们电话。”' },
       ],
       facts: [{ label: '你公司的已发布模型', value: `${published.length} 款` }],
-      outro: '午饭送到了，编辑也没敢关电脑，两份稿子还并排开着。',
+      outro: '编辑打开两个直播间，先把外卖点了。',
     });
   } else if (id === 'story-verification') {
     Object.assign(result, {
       intro: '用户打开 Cloud，问题还没发出去，页面先要求证明“不是自动程序”。输入框下面又多了一份检测说明。',
       choices: [
-        { id: 'fast', label: '试着打快一点', reply: '页面：“输入速度异常，请重新验证。”用户删掉刚打好的问题，开始一个字一个字敲。' },
-        { id: 'slow', label: '一个字一个字打', reply: '页面：“操作节奏异常，请重新验证。”用户：“我按你说的打慢了啊？”' },
+        { id: 'fast', label: '试着打快一点', reply: '页面：“输入速度异常，请重新验证。”用户放慢速度，重新输入。' },
+        { id: 'slow', label: '一个字一个字打', reply: '页面：“操作节奏异常，请重新验证。”用户：“刚才不是让我打慢一点吗？”' },
       ],
       facts: [{ label: '你公司用户的评分', value: published.length ? `${(state.ratingTenths / 10).toFixed(1)} / 5` : '尚未发布，暂无评价' }],
-      outro: '用户点了申诉。系统让他先登录，登录页又弹出了同一道人机验证。',
+      outro: '用户打开申诉页：请先登录。',
     });
   } else if (id === 'story-steady') {
     const lastBill = bills.at(-1);
     Object.assign(result, {
       intro: `Nvidya 的促销邮件又来了：当日报价每单位 ${cash(price({ ...state, gameDay: day }))}，到第 ${campaignDay(state, 147)} 日结束。附件里还放了一张扩建机房的效果图。`,
       lines: [
-        { speaker: 'Nvidya 销售', text: published.length ? '已经发模型了，更得多备几台设备。下款模型总要做大一点吧？' : '先把设备备上，后面做大模型用得着。' },
-        { speaker: '老板', text: '先别发效果图了。我问的是买回来以后，每期还要付多少。' },
-        { speaker: '小满', text: '设备买完，运行费还得每期付。我把最近那张账单放下面了。' },
+        { speaker: 'Nvidya 销售', text: published.length ? '下款模型不打算做大一点？现在买设备正合适。' : '现在买设备，等模型做大就不用排队了。' },
+        { speaker: '老板', text: '设备买回来，每期电费和运行费怎么算？' },
+        { speaker: '小满', text: '最近一张账单在下面，您先看看。' },
       ],
       facts: [
         { label: '现在的设备采购单价', value: `${cash(price(state))} / 单位` },
         { label: '你公司最近的账单', value: lastBill ? `第 ${lastBill.day} 日，收入 ${cash(lastBill.income)}，工资和运行费 ${cash(lastBill.salaries + lastBill.running)}` : '还没有账单' },
       ],
-      outro: '老板关掉效果图，把最近一张账单放大了。',
+      outro: '老板关掉效果图，打开了账单。',
       cta: { label: '看看最近的账单', panel: 'finance' },
     });
   } else if (id === 'story-deadline') {

@@ -772,7 +772,7 @@ function showMilestone(){
   const grant=grants.filter(notice=>notice.day===day).reduce((sum,notice)=>sum+notice.amount,0);
   activeMilestone={ids,champion};pauseForReading();
   $('event-title').textContent=champion?'综合榜第一，融资到账':'首笔融资，到账了';
-  $('event-copy').textContent=champion?`第 ${day} 日，公司以综合榜第一的成绩达成融资条件，当天到账 ${grant} 万。老板让大家赶紧截图。小满：“把日期带上，别家还会发新模型。”`:`第 ${day} 日，融资 ${grant} 万到账。老板打开了显卡报价单。小满：“工资还得付，先算算能买多少。”`;
+  $('event-copy').textContent=champion?`第 ${day} 日，公司凭综合榜第一获得融资，到账 ${grant} 万。老板忙着截图，小满提醒：“日期别裁掉，隔壁还要发模型。”`:`第 ${day} 日，融资 ${grant} 万到账。投资人刚挂电话，老板就把新机房效果图设成了桌面。小满：“效果图不收电费，设备收。”`;
   drawCelebration($('event-art'),activeMilestone);$('event-dialog').showModal();return true;
 }
 $('event-close').addEventListener('click',()=>$('event-dialog').close());

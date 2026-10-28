@@ -112,3 +112,14 @@ test('Gloglo remains a thousand-person company while the scene labels the player
     assert.deepEqual(state,before);
   }
 });
+
+
+test('early payroll and ranking scenes do not claim an incorrect payment day or invented player rank',()=>{
+  const early=to(createState(),5);
+  const bill=storyScene(early,'story-bill');
+  assert.doesNotMatch(bill.lines.map(line=>line.text).join(' '),/今天得付/);
+  assert.match(bill.outro,/第 7 日/);
+  const pencil=storyScene(early,'story-pencil');
+  assert.equal(pencil.facts.find(fact=>fact.label==='你公司的综合排名').value,'尚未发布');
+  assert.doesNotMatch(pencil.lines.map(line=>line.text).join(' '),/我们排第[一二三四五六1-6]/);
+});

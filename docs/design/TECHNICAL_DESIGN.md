@@ -63,7 +63,7 @@ startup112、budget112 与 compact112 的每次正式发布保存 releaseFeedbac
 
 mediaCampaign(state, day) 从最后一款付费宣传模型取得有效订阅加成，默认 day 为下次账单日；账单结算传入当前账单日。模型中的 mediaUntilDay 定义最后有效日，mediaIncome 保存每期收入；期限截至最终经营日。推广每期增加真实收入，bills.mediaIncome 单独记录。更新报道替换有效期，不累计多个宣传效果。回看文章和发布演出不再次扣款或结算。
 
-mediaArticle(model, modelRank, models) 从已发布记录派生该媒体在本公司刊登的篇数，只计入同媒体的玩家模型且发布顺序不晚于当前型号。六级模板之后继续扩大夸张范围，不循环。notifications 传入当时的模型历史，发布及回看传入完整记录，由函数过滤未来型号；两处使用同一篇文章。正文不引用 mediaIncome 或 mediaUntilDay，经营收益只在资金及发布相关账目中展示，不新增持久计数。
+mediaArticle(model, modelRank, models) 从已发布记录派生该媒体在本公司刊登的篇数，只计入同媒体的玩家模型且发布顺序不晚于当前型号。六级模板之后从评测、职场与招聘等角度轮换标题和正文组合，标题包含该媒体的报道篇数。notifications 传入当时的模型历史，发布及回看传入完整记录，由函数过滤未来型号；两处使用同一篇文章。正文不引用 mediaIncome 或 mediaUntilDay，经营收益只在资金及发布相关账目中展示，不新增持久计数。
 
 ## 逐点事件与火爆
 
